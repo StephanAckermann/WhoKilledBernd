@@ -21,20 +21,15 @@ k.scene("intro", () => {
   // Objekt verankert werden soll. Versuchen Sie mal was passiert wenn Sie
   // `anchor("botright)` verwenden.
   const myText = k.add([
-    k.text("Press SPACE to start", { size: 32 }),
+    k.text("Click HERE to start", { size: 32 }),
     k.pos(k.width() / 2, k.height() / 2),
     k.anchor("center"),
     k.area(),
     k.scale(1.5),
   ])
 
-  k.onUpdate(() => {
-    k.camPos(k.vec2(k.mousePos().x, k.mousePos().y))
-  })
-
   myText.onHover(() => {
     myText.color = k.RED
-    k.camScale(1.5)
   })
 
   myText.onHoverEnd(() => {
@@ -45,7 +40,7 @@ k.scene("intro", () => {
   // pro Szene anders angegeben werden. Hier wird mit `space` zur nächsten
   // Szene gewechselt. In der nächsten Szene können wir `space` dann auch zum
   // Springen verwenden.
-  k.onKeyPress("space", () => {
+  k.onMousePress("left", () => {
     k.go("level-01")
   })
 })
