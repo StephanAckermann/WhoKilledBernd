@@ -60,10 +60,10 @@ k.scene("test4", async () => {
 
   Amylase.onClick(() => {
     k.add([k.sprite("Correct")])
-    k.wait(8, () => {
+    k.wait(3, () => {
       k.add([k.sprite("Zucker")])
     })
-    k.wait(16, () => {
+    k.wait(6, () => {
       k.go("Test3")
     })
   })
