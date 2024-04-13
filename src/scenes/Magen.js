@@ -1,6 +1,6 @@
 import { k } from "../game.js"
 
-import "./Darm.js"
+import "./MagenFragen.js"
 
 /** Das ist unser erstes Level. Hier können wir Dinge einstellen die nur für
  * dieses Level gelten sollen, und aber auch Funktionen verwenden die in allen
@@ -44,7 +44,7 @@ k.scene("Magen", async () => {
   })
 
   Bernd.onMousePress(() => {
-    k.go("Darm")
+    k.go("MagenFragen")
   })
 
   const Infotext = k.add([
