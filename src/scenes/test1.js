@@ -1,6 +1,6 @@
 import { k } from "../game.js"
 
-import "./Test2.js"
+import "./Test3.js"
 
 /** Das ist unser erstes Level. Hier können wir Dinge einstellen die nur für
  * dieses Level gelten sollen, und aber auch Funktionen verwenden die in allen
@@ -44,6 +44,6 @@ k.scene("test1", async () => {
   })
 
   Bernd.onMousePress(() => {
-    k.go("Test2")
+    k.go("Test3")
   })
 })
