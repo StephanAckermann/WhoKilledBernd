@@ -1,10 +1,11 @@
 import { k } from "../game.js"
 
 import "./MagenFragen.js"
-//import "./Darm.js"
+import "./Darm.js"
 
 k.scene("Speisebrei", async () => {
   k.loadSprite("Bernd", "sprites/BernddasBrot.png")
+  k.loadSprite("Verdaut", "sprites/VerdauterBernd.png")
 
   const Info = k.add([
     k.text(
@@ -29,4 +30,17 @@ k.scene("Speisebrei", async () => {
     k.area(),
     k.anchor("center"),
   ])
+
+  Bernd.onClick(() => {
+    Bernd.destroy()
+    const Bernd2 = k.add([
+      k.sprite("Verdaut"),
+      k.pos(500, 350),
+      k.area(),
+      k.anchor("center"),
+    ])
+    Bernd2.onClick(() => {
+      k.go("Darm")
+    })
+  })
 })
