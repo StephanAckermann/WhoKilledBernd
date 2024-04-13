@@ -24,15 +24,6 @@ k.scene("Shit", async () => {
 
   const SPEED = 320
 
-  const Mitte = k.add([
-    k.sprite("Kacke"),
-    k.pos(190, 300),
-    k.area(),
-    k.anchor("center"),
-    k.body(),
-    "Target",
-  ])
-
   const BGtest = k.add([
     k.sprite("Shit"),
     k.pos(475, 250),

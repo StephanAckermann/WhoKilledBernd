@@ -152,7 +152,7 @@ k.scene("Darm", async () => {
         })
 
         Bernd.onMousePress(() => {
-          k.go("MagenFragen")
+          k.go("Shit")
         })
       })
     })
