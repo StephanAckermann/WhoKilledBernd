@@ -10,6 +10,10 @@ k.scene("Darm", async () => {
 
   const SPEED = 320
 
+  const Info1 = k.add([k.sprite("bread"), k.pos(460, 170), k.area()])
+  const Info2 = k.add([k.sprite("bread"), k.pos(310, 250), k.area()])
+  const Info3 = k.add([k.sprite("bread"), k.pos(450, 330), k.area()])
+
   const BGtest = k.add([
     k.sprite("Darm"),
     k.pos(475, 250),
@@ -20,23 +24,11 @@ k.scene("Darm", async () => {
   const Bernd = k.add([
     k.sprite("Verdbread"),
 
-    k.pos(450, 200),
+    k.pos(650, 200),
     k.anchor("center"),
     k.area(),
     "Verdaut",
   ])
-
-  Bernd.onHover(() => {
-    Bernd.color = k.rgb(255, 0, 0)
-  })
-
-  Bernd.onHoverEnd(() => {
-    Bernd.color = k.rgb(255, 255, 255)
-  })
-
-  Bernd.onMousePress(() => {
-    k.go("MagenFragen")
-  })
 
   k.onKeyDown("left", () => {
     // .move() is provided by pos() component, move by pixels per second
@@ -58,28 +50,111 @@ k.scene("Darm", async () => {
     Bernd.move(0, SPEED)
   })
 
-  const Info1 = k.add([k.sprite("bread"), k.pos(50, 50), k.area()])
-  const Info2 = k.add([k.sprite("bread"), k.pos(250, 250), k.area()])
-  const Info3 = k.add([k.sprite("bread"), k.pos(350, 350), k.area()])
-
   Info1.onCollide("Verdaut", () => {
     Info1.destroy()
     const Infotext = k.add([
       k.text(
-        "Wenn der Brei im Magen" +
+        "1. Im Dünndarm werden die " +
           "\n" +
-          "ausreichend verdaut worden" +
+          "Nährstoffe wie Kohlen-   " +
           "\n" +
-          "ist, wird er portionsweise" +
+          "hydrate, Proteine und   " +
           "\n" +
-          "in den Dünndarm geschoben.",
+          "Fette aus dem Brot heraus-  " +
+          "\n" +
+          "gezogen und vom Körper " +
+          "\n" +
+          "aufgenommen (Resorption)." +
+          "\n" +
+          "Die gesamte Oberfläche der" +
+          "\n" +
+          "Dünndarmschleimhaut kann  " +
+          "\n" +
+          "bis zu 200 m2 betragen.  " +
+          "\n" +
+          "Die Nährstoffe werden dann  " +
+          "\n" +
+          "durch die Darmwand in den " +
+          "\n" +
+          "Blutkreislauf aufgenommen.",
         {
           size: 22,
         },
       ),
-      k.pos(k.width() / 6.8, k.height() / 6 + 0),
+      k.pos(145, 140),
       k.anchor("center"),
       k.color(255, 255, 255),
     ])
+    Info2.onCollide("Verdaut", () => {
+      Info2.destroy()
+      const Infotext = k.add([
+        k.text(
+          "2. Im Dickdarm werden die " +
+            "\n" +
+            "letzten Wasser- und " +
+            "\n" +
+            "Salzreste aus dem Brotbrei " +
+            "\n" +
+            "absorbiert. Was übrig " +
+            "\n" +
+            "bleibt, ist hauptsächlich " +
+            "\n" +
+            "unverdauliche Faser und " +
+            "\n" +
+            "Zellulose. Hier werden " +
+            "\n" +
+            "auch einige nützliche " +
+            "\n" +
+            "Bakterien den Nahrungsresten " +
+            "\n" +
+            "hinzugefügt, bevor sie " +
+            "\n" +
+            "weiter durch den Darm " +
+            "\n" +
+            "bewegt werden.",
+          {
+            size: 22,
+          },
+        ),
+        k.pos(820, 140),
+        k.anchor("center"),
+        k.color(255, 255, 255),
+      ])
+      Info3.onCollide("Verdaut", () => {
+        Info3.destroy()
+        const Infotext = k.add([
+          k.text(
+            "3. Die unverdaulichen Teile " +
+              "\n" +
+              "des Brotes, zusammen " +
+              "\n" +
+              "mit anderen Abfallstoffen, " +
+              "\n" +
+              "werden schließlich als" +
+              "\n" +
+              "Stuhl im Enddarm " +
+              "\n" +
+              "gesammelt.",
+            {
+              size: 22,
+            },
+          ),
+          k.pos(140, 380),
+          k.anchor("center"),
+          k.color(255, 255, 255),
+        ])
+        Bernd.onHover(() => {
+          Bernd.color = k.rgb(255, 0, 0)
+        })
+
+        Bernd.onHoverEnd(() => {
+          Bernd.color = k.rgb(255, 255, 255)
+        })
+
+        Bernd.onMousePress(() => {
+          k.go("MagenFragen")
+        })
+      })
+    })
   })
 })
