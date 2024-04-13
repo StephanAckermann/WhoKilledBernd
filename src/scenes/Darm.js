@@ -144,7 +144,7 @@ k.scene("Darm", async () => {
           k.color(255, 255, 255),
         ])
         Bernd.onHover(() => {
-          Bernd.color = k.rgb(255, 0, 0)
+          Bernd.color = k.rgb(130, 80, 25)
         })
 
         Bernd.onHoverEnd(() => {
