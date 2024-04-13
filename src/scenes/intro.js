@@ -1,5 +1,5 @@
 import { k } from "../game.js"
-import "./level-01.js"
+import "./test1.js"
 
 /**
  * Die Funktion `scene` kommt von Kaboom, und erstellt uns einen
@@ -20,17 +20,27 @@ k.scene("intro", () => {
   // Position der Text sein soll. Mit `anchor` können wir angeben wie das
   // Objekt verankert werden soll. Versuchen Sie mal was passiert wenn Sie
   // `anchor("botright)` verwenden.
-  k.add([
-    k.text("Press SPACE to start", { size: 32 }),
+  const myText = k.add([
+    k.text("Click HERE to start", { size: 32 }),
     k.pos(k.width() / 2, k.height() / 2),
     k.anchor("center"),
+    k.area(),
+    k.scale(1.5),
   ])
+
+  myText.onHover(() => {
+    myText.color = k.RED
+  })
+
+  myText.onHoverEnd(() => {
+    myText.color = k.WHITE
+  })
 
   // Mit dieser Funktion können wir auf Tastendrucke reagieren. Diese können
   // pro Szene anders angegeben werden. Hier wird mit `space` zur nächsten
   // Szene gewechselt. In der nächsten Szene können wir `space` dann auch zum
   // Springen verwenden.
-  k.onKeyPress("space", () => {
-    k.go("level-01")
+  k.onMousePress("left", () => {
+    k.go("test1")
   })
 })
