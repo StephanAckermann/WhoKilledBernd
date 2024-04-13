@@ -15,14 +15,14 @@ import "./Test3.js"
  * wir einige spezialisierte Funktionen verwenden.
  *
  */
-k.scene("test1", async () => {
+k.scene("Magen", async () => {
   k.loadSprite("bread", "sprites/BernddasBrot.png")
-  k.loadSprite("bakery", "sprites/bakery.png")
+  k.loadSprite("Magen", "sprites/Magen.png")
   k.loadSprite("ground", "sprites/ground.png")
 
   const BGtest = k.add([
-    k.sprite("bakery"),
-    k.pos(400, 250),
+    k.sprite("Magen"),
+    k.pos(475, 250),
     k.area(),
     k.anchor("center"),
   ])
@@ -30,7 +30,7 @@ k.scene("test1", async () => {
   const Bernd = k.add([
     k.sprite("bread"),
 
-    k.pos(550, 200),
+    k.pos(550, 350),
     k.anchor("center"),
     k.area(),
   ])
@@ -44,6 +44,26 @@ k.scene("test1", async () => {
   })
 
   Bernd.onMousePress(() => {
-    k.go("Test3")
+    k.go("Duenndarm")
   })
+
+  const Infotext = k.add([
+    k.text(
+      "Bernd gelangt durch den" +
+        "\n" +
+        "Magenmund in den Magen." +
+        "\n" +
+        "Im Magen wird das Brot mit" +
+        "\n" +
+        "Magensäften und Verdauungsenzymen vermischt." +
+        "\n" +
+        "Diese ständige Durchmischung dient ebenfalls der mechanischen Zerkleinerung.",
+      {
+        size: 22,
+      },
+    ),
+    k.pos(k.width() / 3, k.height() / 9 + 0),
+    k.anchor("center"),
+    k.color(255, 255, 255),
+  ])
 })
