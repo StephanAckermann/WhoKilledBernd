@@ -44,6 +44,6 @@ k.scene("test1", async () => {
   })
 
   Bernd.onMousePress(() => {
-    k.go("Test3")
+    k.go("Test2")
   })
 })

@@ -64,7 +64,7 @@ k.scene("test4", async () => {
       k.add([k.sprite("Zucker")])
     })
     k.wait(16, () => {
-      k.go("Test2")
+      k.go("Test3")
     })
   })
 
