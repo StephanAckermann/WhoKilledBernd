@@ -1,6 +1,6 @@
 import { k } from "../game.js"
 
-import "./Darm.js"
+import "./Magen.js"
 
 /** Das ist unser erstes Level. Hier können wir Dinge einstellen die nur für
  * dieses Level gelten sollen, und aber auch Funktionen verwenden die in allen
@@ -15,22 +15,23 @@ import "./Darm.js"
  * wir einige spezialisierte Funktionen verwenden.
  *
  */
-k.scene("Magen", async () => {
+k.scene("Darm", async () => {
   k.loadSprite("bread", "sprites/BernddasBrot.png")
-  k.loadSprite("Magen", "sprites/Magen.png")
+  k.loadSprite("Darm", "sprites/Darm.png")
   k.loadSprite("ground", "sprites/ground.png")
+  k.loadSprite("Verdbread", "sprites/VerdauterBernd.png")
 
   const BGtest = k.add([
-    k.sprite("Magen"),
+    k.sprite("Darm"),
     k.pos(475, 250),
     k.area(),
     k.anchor("center"),
   ])
 
   const Bernd = k.add([
-    k.sprite("bread"),
+    k.sprite("Verdbread"),
 
-    k.pos(550, 350),
+    k.pos(450, 200),
     k.anchor("center"),
     k.area(),
   ])
@@ -44,27 +45,23 @@ k.scene("Magen", async () => {
   })
 
   Bernd.onMousePress(() => {
-    k.go("Darm")
+    k.go("MagenFragen")
   })
 
   const Infotext = k.add([
     k.text(
-      "Bernd gelangt durch den Magenmund" +
+      "Wenn der Brei im Magen" +
         "\n" +
-        "in den Magen." +
+        "ausreichend verdaut worden" +
         "\n" +
-        "Im Magen wird Bernd mit Magensäften und" +
+        "ist, wird er portionsweise" +
         "\n" +
-        "Verdauungsenzymen vermischt." +
-        "\n" +
-        "Diese ständige Durchmischungdient ebenfalls" +
-        "\n" +
-        "mechanischen Zerkleinerung.",
+        "in den Dünndarm geschoben.",
       {
         size: 22,
       },
     ),
-    k.pos(k.width() / 4.5, k.height() / 6 + 0),
+    k.pos(k.width() / 6.8, k.height() / 6 + 0),
     k.anchor("center"),
     k.color(255, 255, 255),
   ])
