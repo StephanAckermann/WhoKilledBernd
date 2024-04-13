@@ -1,6 +1,6 @@
 import { k } from "../game.js"
 
-import "./test1.js"
+import "./test4.js"
 
 k.scene("Test2", async () => {
   k.loadSprite("Bernd", "sprites/BernddasBrot.png")

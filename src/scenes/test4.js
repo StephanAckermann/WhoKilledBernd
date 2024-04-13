@@ -1,6 +1,6 @@
 import { k } from "../game.js"
 
-import "./test1.js"
+import "./Test3.js"
 import "./Test2.js"
 
 k.scene("test4", async () => {
