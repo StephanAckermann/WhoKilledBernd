@@ -145,7 +145,7 @@ k.scene("Darm", async () => {
         ])
         Bernd.color = k.rgb(130, 80, 25)
 
-        Bernd.onMousePress(() => {
+        Bernd.onClick(() => {
           k.go("Shit")
         })
       })

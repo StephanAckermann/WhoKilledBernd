@@ -17,7 +17,7 @@ k.scene("Speisebrei", async () => {
         "\n" +
         "ein, um die weiteren Verdauungsprozesse zu unterstützen.  " +
         "\n" +
-        "Der Saft der beiden Organeverdaut den im Mund und Magen " +
+        "Der Saft der beiden Organe verdaut den im Mund und Magen " +
         "\n" +
         "vorverdauten Speisebrei zu Ende.",
     ),

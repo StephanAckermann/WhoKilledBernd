@@ -40,7 +40,7 @@ k.scene("intro", () => {
   // pro Szene anders angegeben werden. Hier wird mit `space` zur nächsten
   // Szene gewechselt. In der nächsten Szene können wir `space` dann auch zum
   // Springen verwenden.
-  k.onMousePress("left", () => {
+  myText.onClick(() => {
     k.go("test1")
   })
 })

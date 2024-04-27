@@ -2,19 +2,6 @@ import { k } from "../game.js"
 
 import "./MagenFragen.js"
 
-/** Das ist unser erstes Level. Hier können wir Dinge einstellen die nur für
- * dieses Level gelten sollen, und aber auch Funktionen verwenden die in allen
- * Levels gleich sind.
- *
- * Wir brauchen hier das Schlüsselwort `async` direkt vor der Funktion, weil
- * wir innerhalb der Funktion eine spezielle Funktion aufrufen und warten
- * müssen bis diese beendet ist. Dieses warten passiert mit dem Schlüsselwort
- * `await`.
- *
- * Bei diesem ersten Level handelt es sich um ein Jump'n'Run-Spiel. Da müssen
- * wir einige spezialisierte Funktionen verwenden.
- *
- */
 k.scene("Magen", async () => {
   k.loadSprite("bread", "sprites/BernddasBrot.png")
   k.loadSprite("Magen", "sprites/Magen.png")
@@ -43,7 +30,7 @@ k.scene("Magen", async () => {
     Bernd.color = k.rgb(255, 255, 255)
   })
 
-  Bernd.onMousePress(() => {
+  Bernd.onClick(() => {
     k.go("MagenFragen")
   })
 
@@ -57,9 +44,9 @@ k.scene("Magen", async () => {
         "\n" +
         "Verdauungsenzymen vermischt." +
         "\n" +
-        "Diese ständige Durchmischungdient ebenfalls" +
+        "Diese ständige Durchmischung dient ebenfalls" +
         "\n" +
-        "mechanischen Zerkleinerung.",
+        "der mechanischen Zerkleinerung.",
       {
         size: 22,
       },
