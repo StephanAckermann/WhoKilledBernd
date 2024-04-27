@@ -1,6 +1,6 @@
 import { k } from "../game.js"
 
-import "./test1.js"
+import "./intro.js"
 
 /** Das ist unser erstes Level. Hier können wir Dinge einstellen die nur für
  * dieses Level gelten sollen, und aber auch Funktionen verwenden die in allen
@@ -37,6 +37,17 @@ k.scene("Shit", async () => {
     k.area(),
     k.body(),
   ])
+
+  const Retry = k.add([
+    k.text("Retry", { size: 32 }),
+    k.pos(50, 50),
+    k.area(),
+    k.body(),
+  ])
+
+  Retry.onClick(() => {
+    k.go("intro")
+  })
 
   k.onKeyDown("left", () => {
     // .move() is provided by pos() component, move by pixels per second

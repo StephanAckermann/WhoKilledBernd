@@ -143,13 +143,7 @@ k.scene("Darm", async () => {
           k.anchor("center"),
           k.color(255, 255, 255),
         ])
-        Bernd.onHover(() => {
-          Bernd.color = k.rgb(130, 80, 25)
-        })
-
-        Bernd.onHoverEnd(() => {
-          Bernd.color = k.rgb(255, 255, 255)
-        })
+        Bernd.color = k.rgb(130, 80, 25)
 
         Bernd.onMousePress(() => {
           k.go("Shit")
