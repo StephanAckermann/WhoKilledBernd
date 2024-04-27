@@ -1,6 +1,7 @@
 import { k } from "../game.js"
 
 import "./intro.js"
+import "./EasterEgg.js"
 
 k.scene("Shit", async () => {
   k.loadSprite("bread", "sprites/BernddasBrot.png")
@@ -8,6 +9,7 @@ k.scene("Shit", async () => {
   k.loadSprite("ground", "sprites/ground.png")
   k.loadSprite("Verdbread", "sprites/VerdauterBernd.png")
   k.loadSprite("Kacke", "sprites/Shit.png")
+  k.loadSprite("target", "sprites/target.png")
 
   const SPEED = 320
 
@@ -32,6 +34,14 @@ k.scene("Shit", async () => {
     k.body(),
   ])
 
+  const Target = k.add([
+    k.sprite("target"),
+    k.pos(900, 0),
+    k.area(),
+    k.body({ isStatic: true }),
+    "aim",
+  ])
+
   Retry.onClick(() => {
     k.go("intro")
   })
@@ -54,5 +64,9 @@ k.scene("Shit", async () => {
   k.onKeyDown("down", () => {
     // .move() is provided by pos() component, move by pixels per second
     BerndMove.move(0, SPEED)
+  })
+
+  Retry.onCollide("aim", () => {
+    k.go("EasterEgg")
   })
 })
